@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "fish-pack": "bin/fish-pack.js"
+    "fish-pack": "./bin/fish-pack.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx fish-pack"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/lok660/fish-pack/issues"
   },
-  "homepage": "https://github.com/lok660/fish-pack#readme"
+  "homepage": "https://github.com/lok660/fish-pack#readme",
+  "dependencies": {
+    "@babel/generator": "^7.11.6",
+    "@babel/traverse": "^7.11.5",
+    "@babel/types": "^7.11.5",
+    "babylon": "^6.18.0"
+  }
 }
