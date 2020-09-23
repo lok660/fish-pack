@@ -1,0 +1,38 @@
+(function (modules) { // webpackBootstrap
+  // The module cache
+  var installedModules = {};
+
+  // The require function
+  function __webpack_require__ (moduleId) {
+
+    // Check if module is in cache
+    if (installedModules[moduleId]) {
+      return installedModules[moduleId].exports;
+    }
+    // Create a new module (and put it into the cache)
+    var module = installedModules[moduleId] = {
+      i: moduleId,
+      l: false,
+      exports: {}
+    };
+
+    // 执行 module 对应的代码,并传一个 __webpack_require__ 这个参数过去
+    modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+    // Flag the module as loaded
+    module.l = true;
+
+    // Return the exports of the module
+    return module.exports;
+  }
+  // 最开始的传参数是一个入口文件
+  return __webpack_require__(__webpack_require__.s = "<%-entryId%>");
+})
+  ({
+<%for (let key in modules) {%>
+  "<%-key%>":
+  (function (module, exports, __webpack_require__) {
+    eval(`<%-modules[key]%>`)
+  }),
+<%}%>
+})
