@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx fish-pack"
+    "build": "npx fish-pack"
   },
   "repository": {
     "type": "git",
