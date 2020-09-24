@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rule: [
+    rules: [
       {
         test: /\.less$/,
         use: [
