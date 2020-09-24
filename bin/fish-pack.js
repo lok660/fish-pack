@@ -9,7 +9,7 @@ const Complier = require('../lib/Compiler.js')
 const complier = new Complier(config)
 
 // 在 run 之前发布一个 entryOptions 的钩子
-// complier.hooks.entryOptions.call()
+complier.hooks.entryOption.call()
 
 // 调用 compiler 的 run 方法执行代码
 complier.run()

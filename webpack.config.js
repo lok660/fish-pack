@@ -1,4 +1,21 @@
 let path = require('path')
+
+class p {
+  apply (compiler) {
+    compiler.hooks.emit.tap('emit', function () {
+      console.log('emit')
+    })
+  }
+}
+
+class p1 {
+  apply (compiler) {
+    compiler.hooks.afterPlugins.tap('afterPlugins', function () {
+      console.log('afterPlugins')
+    })
+  }
+}
+
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -16,5 +33,9 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new p(),
+    new p1()
+  ]
 }
